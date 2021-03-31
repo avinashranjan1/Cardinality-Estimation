@@ -1,0 +1,13 @@
+Table name                                          Columns     Type of entries in column
+
+movie_companies                                     note        (2011)(Netherlands)(TV)
+keyword                                             keyword      grapes
+name                                                name         Robert
+aka_name                                            name         Short too
+cast_info                                           note
+company_name                                        name        Dusty Nose Productions
+link_type                                           link        followed by
+movie_info                                          note             internet
+movie_info                                          info            English
+company_type                                        kind           production companies
+char_name                                           name           Frankie
