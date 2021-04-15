@@ -1,0 +1,16 @@
+For separating each words by space, I used a linux command.
+
+Eg:    abc cdef ghi jk
+----
+Solution: 
+-----------
+abc
+cdef
+ghi
+jk
+
+
+Command
+----------------
+
+tr ' ' '\n' < keyword.csv > keyword1.csv 
