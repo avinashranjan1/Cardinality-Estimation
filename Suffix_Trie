@@ -1,0 +1,91 @@
+example=["producer", "costume", "composer","production","costumer",'resume']
+reverse = lambda i : i[::-1] 
+res_example = list(map(reverse, example)) 
+
+# example=["referenced",'references','off','of','remade','remake']
+trie_dict = {}           # represent the entire tree
+trie_path=[]             # represent the path the tree follows
+# print(trie_dict)
+
+def builder(word, trie_dict, trie_path, words):
+    #     temp_path = trie_path
+    if False:
+        print("This will never happen.")
+        # if trie_path:
+    #    concat_key = "".join(trie_path)
+    #    print(concat_key)
+    #         if concat_key in word:
+    #             temp_path = []
+    #    if len(word.replace(concat_key,""))>0:
+    #        return builder(word.replace(concat_key,""), trie_dict, trie_path, words)
+
+    else:
+        key = ""  # this wil provide the node
+        count = 0
+        concat_key = "".join(trie_path) #this will provide the prfeix
+#         print(word)
+        w = word[len(concat_key):]
+#         print("w:" + w)       #print the selected word
+        related_words = set()
+        related_words.add(word)
+        for c in range(min(len(word)+1, len(w)+1)):  # even max_match can be added in range(min(len(word),len(w),max_match))
+            temp_count = 0
+            temp_key = w[:c]
+            if temp_key != "":
+                for w1 in words:
+                    if concat_key == w1[:len(concat_key)]:
+                        related_words.add(w1)
+                        w1 = w1[len(concat_key):]
+                        if temp_key == w1[:c]:
+                            temp_count += 1
+            if count <= temp_count:
+                count = temp_count
+                key = temp_key
+        related_words2 = set()
+#         print(related_words)     # compare the selected words with related words
+        for wor in related_words:
+            if "".join(trie_path) + key == wor[0:len(key + "".join(trie_path))]:
+                related_words2.add(wor)
+#         print("Trie dict")
+#         print(trie_dict)
+#         print("Concat key"+":"+concat_key)
+#         print(concat_key)
+        if len(key) > 0:
+            ("Common of: " + word + ", " + key)
+        else:
+            key = word[len("".join(trie_path)):] + "$"
+        if not concat_key:
+            if "" in trie_dict:
+                # When using list() list("al") becomes "a", "l" so [] should be used.
+                # [] cannot be used all the time since it is an object i.e {}. It'll become [{}] which creates an error
+                # So use list() when its a letter and use [] when it's a word
+                trie_dict[""] = set((list(trie_dict[""])) + [key])
+            else:
+                trie_dict[""] = {key}
+        else:
+            if concat_key[:] in trie_dict:
+                trie_dict[concat_key[:]] = set(list(trie_dict[concat_key[:]]) + [key])
+            else:
+                trie_dict[concat_key[:]] = {key}
+        trie_path.append(key)
+#         print( trie_dict)
+#         print(trie_path)
+#         print(related_words2)
+#         print(word)  # .replace(concat_key,"").replace(key,""))
+        # .replace(concat_key,"").replace(key,"")
+        if (len("".join(trie_path)) < len(word)):
+            return builder(word, trie_dict, trie_path, related_words2)
+        else:
+            return trie_dict
+
+for word in res_example:
+    trie_dict = builder(word, trie_dict, [], res_example)
+    print("Output trie dict")
+    trie_temp = dict()
+    for k, v in trie_dict.items():
+        s=set()
+        for item in v:
+            s.add(item[::-1])
+        trie_temp[k[::-1]] = s
+    print(trie_temp)
+trie_dict = trie_temp
