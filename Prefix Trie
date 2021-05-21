@@ -25,9 +25,9 @@ def builder(word, trie_dict, trie_path, words):
         key = ""  # this wil provide the node
         count = 0
         concat_key = "".join(trie_path) #this will provide the prfeix
-        print(word)
+#         print(word)
         w = word[len(concat_key):]
-        print("w:" + w)       #print the selected word
+#         print("w:" + w)       #print the selected word
         related_words = set()
         related_words.add(word)
         for c in range(min(len(word)+1, len(w)+1)):  # even max_match can be added in range(min(len(word),len(w),max_match))
@@ -44,16 +44,16 @@ def builder(word, trie_dict, trie_path, words):
                 count = temp_count
                 key = temp_key
         related_words2 = set()
-        print(related_words)     # compare the selected words with related words
+#         print(related_words)     # compare the selected words with related words
         for wor in related_words:
             if "".join(trie_path) + key == wor[0:len(key + "".join(trie_path))]:
                 related_words2.add(wor)
-        print("Trie dict")
-        print(trie_dict)
-        print("Concat key"+":"+concat_key)
-        print(concat_key)
+#         print("Trie dict")
+#         print(trie_dict)
+#         print("Concat key"+":"+concat_key)
+#         print(concat_key)
         if len(key) > 0:
-            print("Common of: " + word + ", " + key)
+            ("Common of: " + word + ", " + key)
         else:
             key = word[len("".join(trie_path)):] + "$"
         if not concat_key:
@@ -70,10 +70,10 @@ def builder(word, trie_dict, trie_path, words):
             else:
                 trie_dict[concat_key[:]] = {key}
         trie_path.append(key)
-        print( trie_dict)
-        print(trie_path)
-        print(related_words2)
-        print(word)  # .replace(concat_key,"").replace(key,""))
+#         print( trie_dict)
+#         print(trie_path)
+#         print(related_words2)
+#         print(word)  # .replace(concat_key,"").replace(key,""))
         # .replace(concat_key,"").replace(key,"")
         if (len("".join(trie_path)) < len(word)):
             return builder(word, trie_dict, trie_path, related_words2)
