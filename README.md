@@ -15,7 +15,8 @@
 
 . Adapt the transformer next sentence prediction model to work on your task of prefix + suffix matches 
 
-. Train the model on these matches (collect the results of the experiment for the Thesis), also maybe try different transformers and pick the best at the end.
+. Train the model on these matches (collect the results of the experiment for the Thesis), also maybe try different transformers 
+  and pick the best at the end.
 
 . Figure out and extract the prefix embedding from the model: this should become your input for MSCN. 
 
