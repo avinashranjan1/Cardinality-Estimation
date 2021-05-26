@@ -1,7 +1,9 @@
 # Cardinality-Estimation
 
 
-. Set-up a local environment with Postgres and the IMDB dataset. Quick task: Find the min and max of all columns an create a dictionary with it. For those columns       with a low entropy, store all possible values (as we treat them like a category).
+. Set-up a local environment with Postgres and the IMDB dataset. Quick task: Find the min and max of all columns an create a dictionary with it.
+
+. For those columns with a low entropy, store all possible values (as we treat them like a category).
 
 . Postgres analysis of errors for suffix and prefix matches on Job queries
 
