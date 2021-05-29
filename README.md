@@ -3,7 +3,11 @@
 
 # Set-up a local environment with Postgres and the IMDB dataset.
 
+. First I went through the github which contains all the join orderbenchmark query templeates from there I looked for the table's columns which contains data       which can be used for  prefix and suffix.
+ 
+  Link for the data set: https://www.imdb.com/interfaces/
 
+. I extracted the particular columns from the tables which contains prefix and sufix from pdAdmin, where I had already created a database.
 
 
 Find the min and max of all columns an create a dictionary with it.
