@@ -1,7 +1,7 @@
 # Cardinality-Estimation
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
  <div align=”center”>
-. Set-up a local environment with Postgres and the IMDB dataset.
+- Set-up a local environment with Postgres and the IMDB dataset.
   
   
 
