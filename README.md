@@ -1,7 +1,9 @@
 # Cardinality-Estimation
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-
+ <div align=”center”>
 . Set-up a local environment with Postgres and the IMDB dataset.
+  
+  
 
 . Find the min and max of all columns an create a dictionary with it.
 
@@ -17,8 +19,7 @@
 
 . Adapt the transformer next sentence prediction model to work on your task of prefix + suffix matches. 
 
-. Train the model on these matches (collect the results of the experiment for the Thesis), also maybe try different transformers
-  and pick the best at the end.
+. Train the model on these matches (collect the results of the experiment for the Thesis), also maybe try different transformer and pick the best at the end.
 
 . Figure out and extract the prefix embedding from the model: this should become your input for MSCN. 
 
@@ -29,3 +30,4 @@
 . Extra: Figure out for BERT and MSCN if we could use some interpretability tools to explain our results for us. 
 
 . Research on text encoding with a focus on prefix and suffix matches, research on how learned models deal with these matches.   
+</div>
