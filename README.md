@@ -1,30 +1,23 @@
 # Cardinality-Estimation
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Set-up a local environment with Postgres and the IMDB dataset.
+. Set-up a local environment with Postgres and the IMDB dataset.
 
-. First I went through the github which contains all the join orderbenchmark query templeates from there I looked for the table's columns which contains data       which can be used for  prefix and suffix.
- 
-  Link for the data set: https://www.imdb.com/interfaces/
-
-. I extracted the particular columns from the tables which contains prefix and sufix from pdAdmin, where I had already created a database.
-
-
-Find the min and max of all columns an create a dictionary with it.
+. Find the min and max of all columns an create a dictionary with it.
 
 . For those columns with a low entropy, store all possible values (as we treat them like a category).
 
-. Postgres analysis of errors for suffix and prefix matches on Job queries
+. Postgres analysis of errors for suffix and prefix matches on Job queries.
 
-. JOB generate synthetic queries with prefix and suffix predicates 
+. JOB generate synthetic queries with prefix and suffix predicates.
 
-. Train and test MSCN on JOB and JCC-H 
+. Train and test MSCN on JOB and JCC-H.
 
-. Generate fine-tuning datasets from the given benchmarks, for BERT 
+. Generate fine-tuning datasets from the given benchmarks, for BERT.
 
-. Adapt the transformer next sentence prediction model to work on your task of prefix + suffix matches 
+. Adapt the transformer next sentence prediction model to work on your task of prefix + suffix matches. 
 
-. Train the model on these matches (collect the results of the experiment for the Thesis), also maybe try different transformers 
+. Train the model on these matches (collect the results of the experiment for the Thesis), also maybe try different transformers
   and pick the best at the end.
 
 . Figure out and extract the prefix embedding from the model: this should become your input for MSCN. 
